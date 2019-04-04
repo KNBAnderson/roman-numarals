@@ -8,7 +8,10 @@ _Roman numerals to number converter and vice versa_
 
 |Description|Input|Output|
 |-|-|-|
-|
+|Accept only whole numbers|1|I|
+|Can convert a number into a single character numeral|1, 5, 10, 50, 100, 500, 1000|I, V, X, L, C, D, M|
+|Can convert a single number into a multi-character numeral| 2 | II |
+|Can convert a number into numerals where a character is not repeated more than three times| 4 | IV |
 
 
 ## Setup/Installation Requirements
