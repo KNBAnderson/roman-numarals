@@ -1,8 +1,17 @@
+var numberRe =/\D/
 
 $(document).ready(function (){
 
   $('#arabic').on('input',function(e){
-    var number = ('#arabic').val();
+    var text = $('#arabic').val();
+    var number = parseInt(text);
+
+    if (numberRe.test(text))
+    {
+      console.log(number);
+      $('#arabic').val(text.substring(0, text.length - 1));
+    }
+
 
     if(isNaN($('#arabic').val())) {
 
@@ -16,6 +25,10 @@ $(document).ready(function (){
   });
 
 });
+
+
+
+
 function convertToArabic() {
 
 }
