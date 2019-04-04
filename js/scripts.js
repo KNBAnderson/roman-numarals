@@ -6,6 +6,7 @@ function convertToRoman (number) {
   var numeral = '';
   for (let i = numbersLookupList.length - 1; i >= 0; i--) {
     while (number >= numbersLookupList[i]) {
+
       number -= numbersLookupList[i];
       numeral += numeralsLookupList[i];
     }
@@ -14,38 +15,13 @@ function convertToRoman (number) {
 }
 
 $(document).ready(function (){
-  console.log(numbersLookupList.length)
-  console.log(numeralsLookupList.length)
   $('#arabic').on('input',function(e){
     var text = $('#arabic').val();
     var number = parseInt(text);
 
     if (numberRe.test(text) || number > 3999999)
-      $('#arabic').val(text.substring(0, text.length - 1));
+    $('#arabic').val(text.substring(0, text.length - 1));
 
     $('#roman').val(convertToRoman($('#arabic').val()));
   });
-
-
-
-
-
-
-  $('#roman').on('input',function(e){
-    $('#arabic').val($('#roman').val());
-  });
-
 });
-
-function convertToArabic(numeral) {
-  // var number = 0;
-  // for (let i = numeralsLookupList.length - 2; i >= 0; i = i - 2) {
-  //   while (numeral.length >= numeralsLookupList[i]) {
-  //     var multiNumeral = numeral.substring(0, 2)
-  //     number -= numbersLookupList[i];
-  //     numeral += numeralsLookupList[i];
-  //   }
-  //
-  // }
-  return number;
-}
